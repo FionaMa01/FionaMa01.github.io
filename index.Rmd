@@ -4,7 +4,7 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: lumen
 ---
 
 # This is Fiona's awesome website
