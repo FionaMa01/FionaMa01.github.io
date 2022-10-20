@@ -1,0 +1,30 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This is Fiona's awesome website
+
+hahahahhhahaha links to some pages
+[google](https://www.google.com/) all the time, i love it
+
+
+![](images/haon.jpg) 
+
+```{r}
+library(tidyverse)
+
+sample = rnorm(1000)
+mean(sample)
+```
+
+here is a direct link to the "about" page:
+[about](about.html).
+
+i also made a bonus [extra page](extra_page.html)
+
+
