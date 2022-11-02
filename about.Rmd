@@ -64,7 +64,10 @@ __English__
 
 
 ---
+
+<center>
 <img src="memes/me_happy.jpg" style="width:25%; border=10px solid">
+<center>
 
 Thanks for watching~
 

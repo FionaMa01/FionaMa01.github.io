@@ -14,7 +14,7 @@ Hello, All! Welcome!
 - __Ocupation:__ Currently an MPH student at Columbia University Mailman School of Public Health,  majoring in Epidemiology.
 - __Hobbies:__ I love doing research & playing with data
 
-Here is a meme I find interesting. 
+Here is a meme I find interesting~
 
 <center>
 <img src="memes/me_writing.jpg" style="width:50%; border=10px solid">
