@@ -1,30 +1,31 @@
 ---
-title: "My awesome website"
+title: "Fiona's website"
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: lumen
 ---
+Hello, All! Welcome!
 
-# This is Fiona's awesome website
+# Brief Intro
 
-hahahahhhahaha links to some pages
-[google](https://www.google.com/) all the time, i love it
+- __Name:__ Fengyi (Fiona) Ma
+- __Ocupation:__ Currently an MPH student at Columbia University Mailman School of Public Health,  majoring in Epidemiology.
+- __Hobbies:__ I love research & playing with data
 
+Here is a meme I find interesting. 
 
-![](images/haon.jpg) 
+<center>
+<img src="memes/me_writing.jpg" style="width:25%; border=10px solid">
+<center>
 
-```{r}
-library(tidyverse)
+# To know more about Fiona
 
-sample = rnorm(1000)
-mean(sample)
-```
+You can view my academic and professional experience on the [About Me](about.html) page, same as clicking on the "About Me" button in the top right.
 
-here is a direct link to the "about" page:
-[about](about.html).
+# For P8105 Homework 4, Look at here!
 
-i also made a bonus [extra page](extra_page.html)
+Homework details could be found [here](https://p8105.com/homework_4.html)
 
+I made some [informative plots](plotly.html) using the NYC Restaurant Inspections dataset
 

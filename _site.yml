@@ -1,15 +1,19 @@
-name: "Yay internet!"
+name: "Fiona's website"
 output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "About"
+    - text: "About Me"
       href: about.html
+    - text: "Dashboard"      
+      href: dashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:fm2751@cumc.columbia.edu
     - icon: fa-github fa-lg
       href: http://github.com/FionaMa01/
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/fiona-ma-945842255/
 output:
   html_document:
-    theme: lumen
+    theme: paper
     
