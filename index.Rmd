@@ -23,7 +23,7 @@ Here is a meme I find interesting.
 
 You can view my academic and professional experience on the [About Me](about.html) page, same as clicking on the "About Me" button in the top right.
 
-# For P8105 Homework 4, Look at here!
+# For P8105 Homework 4
 
 Homework details could be found [here](https://p8105.com/homework_4.html)
 
