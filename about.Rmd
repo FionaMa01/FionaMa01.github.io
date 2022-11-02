@@ -1,13 +1,79 @@
 ---
-title: "My awesome website"
+title: "Fiona's experience and background"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# This is Fiona's awesome website
+Please scroll down to view my full resume~
 
-this is the about page
+<img src="memes/me_shy.jpg" style="width:25%; border=10px solid">
+
+
+# EDUCATION
+
+09/2021-NOW   __COLUMBIA UNIVERSITY, USA__
+
+_Master of Public Health in Epidemiology, Certificate in Applied Biostatistics, expected in May 2023_
+
+10/2018-07/2021 __IMPERIAL COLLEGE LONDON, UK__
+
+_Bachelor of Biochemistry, specialized in Bioinformatics, graduated on Jul. 2021_
+
+
+# RESEARCH EXPERIENCE
+
+03/2022-NOW	__Joe Lee's Genetic Epidemiology Lab, Columbia University Irving Medical Center__
+
+_Student Researcher_
+
+06/2021-08/2021	__Zhejiang Food and Drug Inspection Institute__
+
+_Laboratory Analyst_
+
+08/2020-10/2020 __Zhejiang Provincial CDC__
+
+_Research Assistant_
+
+06/2020-08/2020 __Betta Pharmaceuticals Co., Ltd.__
+
+_Research Assistant_
+
+04/2020-07/2020 __Wang Lab, Molecular Engineering Laboratory, UCSD__
+
+_Research Assistant_
+
+
+# SKILLS
+
+__Data Analysis:__
+
+SAS, R, MATLAB, PLINK
+
+__Wet Lab:__
+
+ELISA, Real-Time Polymerase Chain Reaction (qPCR), Cell Culture, High-Performance Liquid Chromatography (HPLC), Liquid Chromatography-Mass Spectrometry (LC-MS)
+
+
+# LANGUAGES
+
+__Chinese__
+
+__English__
+
+
+---
+<img src="memes/me_happy.jpg" style="width:25%; border=10px solid">
+
+Thanks for watching~
+
+
+__Quick navigation:__
+
+Return to Fiona's [homepage](index.html)
+
+Go to Fiona's awesome [plotly page](plotly.html) for HW4
+
 
 

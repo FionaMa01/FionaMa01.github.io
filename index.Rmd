@@ -5,27 +5,28 @@ output:
     toc: true
     toc_float: true
 ---
+
 Hello, All! Welcome!
 
 # Brief Intro
 
 - __Name:__ Fengyi (Fiona) Ma
 - __Ocupation:__ Currently an MPH student at Columbia University Mailman School of Public Health,  majoring in Epidemiology.
-- __Hobbies:__ I love research & playing with data
+- __Hobbies:__ I love doing research & playing with data
 
 Here is a meme I find interesting. 
 
 <center>
-<img src="memes/me_writing.jpg" style="width:25%; border=10px solid">
+<img src="memes/me_writing.jpg" style="width:50%; border=10px solid">
 <center>
 
-# To know more about Fiona
+# Know More about Fiona
 
-You can view my academic and professional experience on the [About Me](about.html) page, same as clicking on the "About Me" button in the top right.
+You can view my academic and professional experience on the [About Me](about.html) page, or clicking on the "About Me" button in the right of navigation bar.
 
 # For P8105 Homework 4
 
 Homework details could be found [here](https://p8105.com/homework_4.html)
 
-I made some [informative plots](plotly.html) using the NYC Restaurant Inspections dataset
+I made some [informative plots](plotly.html) using the NYC Restaurant Inspections dataset, or you can view it by clicking on the "HW4" button in the right of navigation bar.
 
