@@ -24,9 +24,26 @@ Here is a meme I find interesting~
 
 You can view my academic and professional experience on the [About Me](about.html) page, or clicking on the "About Me" button in the right of navigation bar.
 
+
 # For P8105 Homework 4
 
 Homework details could be found [here](https://p8105.com/homework_4.html)
 
 I made some [informative plots](plotly.html) using the NYC Restaurant Inspections dataset, or you can view it by clicking on the "HW4" button in the right of navigation bar.
 
+---
+
+<center>
+<img src="memes/me_links.jpg" style="width:25%; border=10px solid">
+<center>
+
+Thanks for watching~
+
+
+__Quick navigation:__
+
+Find me on [Fiona's GitHub](http://github.com/FionaMa01/)
+
+Contact me via [Fiona's Email](mailto:fm2751@cumc.columbia.edu)
+
+Connect with me on [Fiona's LinkedIn](https://www.linkedin.com/in/fengyi-fiona-ma-945842255/)
