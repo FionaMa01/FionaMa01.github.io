@@ -6,6 +6,8 @@ navbar:
     - text: "About Me"
       href: about.html
     - text: "HW4"      
+      href: dashboard.html
+    - text: "plots"
       href: plotly.html
     - icon: fa-envelope fa-lg
       href: mailto:fm2751@cumc.columbia.edu

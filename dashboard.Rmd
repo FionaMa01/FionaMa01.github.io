@@ -1,0 +1,81 @@
+---
+title: "Fiona's Flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed 
+---
+
+# Load packages and data
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(flexdashboard)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A - Scatterplot
+
+```{r}
+data("rest_inspec")
+
+rest_inspec = 
+rest_inspec %>% 
+  select(boro, cuisine_description, grade, score, dba, inspection_date) %>% 
+  filter(grade %in% c("A", "B", "C"), boro != "Missing") %>% 
+  drop_na() %>% 
+  sample_n(20000)
+```
+
+```{r}
+scatter_plot =
+  rest_inspec %>%
+  filter(str_detect(cuisine_description, "[Ff][Rr][Ee][Nn][Cc][Hh]")) %>% 
+  mutate(
+    text_label = str_c("Grade: ", grade, "\ndba:", dba) 
+    ) %>% 
+  plot_ly(
+    x = ~inspection_date, y = ~score, color = ~boro,
+    type = "scatter", mode = "markers",
+    alpha = .5, text = ~text_label
+    ) %>% 
+  layout(title = "The distribution of scores across inspectation dates")
+
+scatter_plot
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B - Box plot
+
+```{r}
+  rest_inspec %>%
+  filter(cuisine_description %in% c("French", "Korean", "American", "Asian", "African", "Chinese", "Russian", "Italian")) %>%
+  mutate(
+    dba = fct_reorder(dba, score)
+    ) %>% 
+  plot_ly(y = ~score, color = ~cuisine_description, type = "box") %>% 
+  layout(title = "The distribution of scores across 8 cuisines")
+
+boxplot
+```
+
+### Chart C - Bar plot
+
+```{r}
+barchart =
+  rest_inspec %>% 
+  filter(cuisine_description %in% c("French", "Korean", "American", "Asian", "African", "Chinese", "Russian", "Italian")) %>%
+  count(cuisine_description) %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
+  plot_ly(x = ~cuisine_description, y = ~n, color = ~cuisine_description, type = "bar", colors = "viridis") %>% 
+  layout(title = "Frequency of 8 cuisines")
+
+barchart
+```

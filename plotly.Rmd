@@ -1,15 +1,119 @@
 ---
-title: "Fiona's awesome plotly page for HW4"
-author: "Fengyi Ma"
-date: "2022-11-02"
-output: html_document
+title: "Fiona's plotly page"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
-# Load packages and data
-```{r}
+# Plots for NYC Restaurant Inspection results
+
+
+### Load packages and data
+
+```{r, message=FALSE,warning=FALSE}
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+
+knitr::opts_chunk$set(
+	echo = TRUE,
+	warning = FALSE,
+  fig.width = 6,
+  fig.asp = .6,
+  out.width = "90%"
+)
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete = scale_fill_viridis_d
 ```
+
+### Take a look at the dataset
+
+```{r}
+data("rest_inspec")
+```
+
+It is a large dataset with `r nrow(rest_inspec)` observations and `r ncol(rest_inspec)` variables. I am interested in "boro", "cuisine description", "grade", "score", "dba", and "inspection_date" so I will select only these variables, drop missing input, and randomly sample 20000 from them.
+
+### Downsample
+
+```{r}
+rest_inspec = 
+rest_inspec %>% 
+  select(boro, cuisine_description, grade, score, dba, inspection_date) %>% 
+  filter(grade %in% c("A", "B", "C"), boro != "Missing") %>% 
+  drop_na() %>% 
+  sample_n(20000)
+
+rest_inspec
+```
+
+## Plotly Scatterplot
+
+```{r}
+scatter_plot =
+  rest_inspec %>%
+  filter(str_detect(cuisine_description, "[Ff][Rr][Ee][Nn][Cc][Hh]")) %>% 
+  mutate(
+    text_label = str_c("Grade: ", grade, "\ndba:", dba) 
+    ) %>% 
+  plot_ly(
+    x = ~inspection_date, y = ~score, color = ~boro,
+    type = "scatter", mode = "markers",
+    alpha = .5, text = ~text_label
+    ) %>% 
+  layout(title = "The distribution of scores across inspectation dates")
+
+scatter_plot
+```
+
+We couldn't observe any clear trend from this scatterplot, indicating that scores have no clear association with the inspection date.
+
+## Plotly boxplot
+
+```{r}
+boxplot =
+  rest_inspec %>%
+  filter(cuisine_description %in% c("French", "Korean", "American", "Asian", "African", "Chinese", "Russian", "Italian")) %>%
+  mutate(
+    dba = fct_reorder(dba, score)
+    ) %>% 
+  plot_ly(y = ~score, color = ~cuisine_description, type = "box") %>% 
+  layout(title = "The distribution of scores across 8 cuisines")
+
+boxplot
+```
+
+We could see that most of the cuisines performed similarily, except for African, Korean, and Russian restaurants.
+
+## Plotly barchart
+
+```{r}
+barchart =
+  rest_inspec %>% 
+  filter(cuisine_description %in% c("French", "Korean", "American", "Asian", "African", "Chinese", "Russian", "Italian")) %>%
+  count(cuisine_description) %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
+  plot_ly(x = ~cuisine_description, y = ~n, color = ~cuisine_description, type = "bar", colors = "viridis") %>% 
+  layout(title = "Frequency of 8 cuisines")
+
+barchart
+```
+
+We could see that the number of American restaurants was the most, whereas the number of African restaurant is the least. African, Russian, and Korean restaurants had low frequency, might be a explanation for what we observed in the above boxplot for the huge variations in scores.
+
+# Flexdashboard
+
+Please check the [flexdashboard](dashboard.html) I made for these 3 plots.
+
+---
+__Quick navigation:__
+
+Return to Fiona's [homepage](index.html)
 
 

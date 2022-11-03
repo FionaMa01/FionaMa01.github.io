@@ -20,6 +20,7 @@ Here is a meme I find interesting~
 <img src="memes/me_writing.jpg" style="width:50%; border=10px solid">
 <center>
 
+
 # Know More about Fiona
 
 You can view my academic and professional experience on the [About Me](about.html) page, or clicking on the "About Me" button in the right of navigation bar.
