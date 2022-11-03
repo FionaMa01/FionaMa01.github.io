@@ -73,7 +73,7 @@ boxplot =
 boxplot
 ```
 
-### Chart C - Barchart of the frequency counts of restaurants of 8 different cuisines
+### Chart C - Bar chart of the frequency counts of restaurants of 8 different cuisines
 
 ```{r}
 barchart =

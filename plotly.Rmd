@@ -99,7 +99,7 @@ boxplot
 
 We could see that the range of scores for most restaurant cuisines are small and the median score for those restaurants are very close, except for African, Korean, and Russian restaurants. In particular, the range of scores for African restaurants are huge.
 
-## Plotly barchart
+## Plotly bar chart
 
 ```{r}
 barchart =
