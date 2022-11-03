@@ -67,12 +67,16 @@ scatter_plot =
     type = "scatter", mode = "markers",
     alpha = .5, text = ~text_label
     ) %>% 
-  layout(title = "The distribution of scores across inspectation dates")
+  layout(
+    title = "The distribution of scores across inspectation dates",
+    xaxis = list(title = "Inspection date"),
+    yaxis = list(title = "Score")
+    )
 
 scatter_plot
 ```
 
-We couldn't observe any clear trend from this scatterplot, indicating that scores have no clear association with the inspection date.
+We couldn't observe any clear trend from this scatterplot, indicating that scores does not vary by inspection date.
 
 ## Plotly boxplot
 
@@ -84,12 +88,16 @@ boxplot =
     dba = fct_reorder(dba, score)
     ) %>% 
   plot_ly(y = ~score, color = ~cuisine_description, type = "box") %>% 
-  layout(title = "The distribution of scores across 8 cuisines")
+  layout(
+    title = "The distribution of scores across restaurants of 8 different cuisines",
+    xaxis = list(title = "Cuisine of restaurant"),
+    yaxis = list(title = "Score")
+    )
 
 boxplot
 ```
 
-We could see that most of the cuisines performed similarily, except for African, Korean, and Russian restaurants.
+We could see that the range of scores for most restaurant cuisines are small and the median score for those restaurants are very close, except for African, Korean, and Russian restaurants. In particular, the range of scores for African restaurants are huge.
 
 ## Plotly barchart
 
@@ -100,12 +108,16 @@ barchart =
   count(cuisine_description) %>% 
   mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
   plot_ly(x = ~cuisine_description, y = ~n, color = ~cuisine_description, type = "bar", colors = "viridis") %>% 
-  layout(title = "Frequency of 8 cuisines")
+  layout(
+    title = "The frequency counts of restaurants of 8 different cuisines",
+    xaxis = list(title = "Cuisine of restaurant"),
+    yaxis = list(title = "Frequency counts")
+    )
 
 barchart
 ```
 
-We could see that the number of American restaurants was the most, whereas the number of African restaurant is the least. African, Russian, and Korean restaurants had low frequency, might be a explanation for what we observed in the above boxplot for the huge variations in scores.
+We could see that the frequency counts of American restaurants was the largest (close to 5000), whereas the number of African restaurant is the smallest (nearly 100). African, Russian, and Korean restaurants all had low frequency counts, which might be a explanation for what we observed in the above boxplot for the huge variations in scores for these 3 restaurant cuisines.
 
 # Flexdashboard
 

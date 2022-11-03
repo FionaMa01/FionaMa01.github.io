@@ -44,7 +44,11 @@ scatter_plot =
     type = "scatter", mode = "markers",
     alpha = .5, text = ~text_label
     ) %>% 
-  layout(title = "The distribution of scores across inspectation dates")
+  layout(
+    title = "The distribution of scores across inspectation dates",
+    xaxis = list(title = "Inspection date"),
+    yaxis = list(title = "Score")
+    )
 
 scatter_plot
 ```
@@ -55,13 +59,18 @@ Column {data-width=350}
 ### Chart B - Box plot
 
 ```{r}
+boxplot =
   rest_inspec %>%
   filter(cuisine_description %in% c("French", "Korean", "American", "Asian", "African", "Chinese", "Russian", "Italian")) %>%
   mutate(
     dba = fct_reorder(dba, score)
     ) %>% 
   plot_ly(y = ~score, color = ~cuisine_description, type = "box") %>% 
-  layout(title = "The distribution of scores across 8 cuisines")
+  layout(
+    title = "The distribution of scores across restaurants of 8 different cuisines",
+    xaxis = list(title = "Cuisine of restaurant"),
+    yaxis = list(title = "Score")
+    )
 
 boxplot
 ```
@@ -75,7 +84,11 @@ barchart =
   count(cuisine_description) %>% 
   mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
   plot_ly(x = ~cuisine_description, y = ~n, color = ~cuisine_description, type = "bar", colors = "viridis") %>% 
-  layout(title = "Frequency of 8 cuisines")
+  layout(
+    title = "The frequency counts of restaurants of 8 different cuisines",
+    xaxis = list(title = "Cuisine of restaurant"),
+    yaxis = list(title = "Frequency counts")
+    )
 
 barchart
 ```
