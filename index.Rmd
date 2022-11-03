@@ -32,6 +32,11 @@ Homework details could be found [here](https://p8105.com/homework_4.html)
 
 I made some [informative plots](plotly.html) and a [flexdashboard](dashboard.html) using the [NYC Restaurant Inspections dataset](https://p8105.com/dataset_restaurant_inspections.html).
 
+
+# GH repo
+
+Please visit the [GitHub repo](https://github.com/FionaMa01/FionaMa01.github.io) for this website for your information.
+
 ---
 
 <center>
